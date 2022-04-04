@@ -1,0 +1,13 @@
+#Input Alphabet: N/A
+#Tape Alphabet: {0,1}
+
+#Configuration
+initialState=q0
+acceptState=qa
+variant=BUSY_BEAVER
+
+#BB(2)
+#rules=q0,0,q1,1,RIGHT<>q0,1,q1,1,LEFT<>q1,0,q0,1,LEFT<>q1,1,qa,1,RIGHT
+
+#BB(3)
+rules=q0,0,q1,1,RIGHT<>q0,1,qa,1,RIGHT<>q1,0,q2,0,RIGHT<>q1,1,q1,1,RIGHT<>q2,0,q2,1,LEFT<>q2,1,q0,1,LEFT

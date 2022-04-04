@@ -1,0 +1,14 @@
+#Input Alphabet: {0,1}
+#Tape Alphabet: {0,1,*,X}
+
+#Configuration
+initialState=q0
+acceptState=qa
+rejectState=qr
+variant=LEFT_RESET
+
+#Converts 0->1 and 1->0 and then resets
+#rules=q0,1,q0,0,RIGHT<>q0,0,q0,1,RIGHT<>q0,*,qa,*,RESET
+
+#Decides whether all symbols are 1
+rules=q0,0,q0,0,RIGHT<>q0,1,q0,X,RIGHT<>q0,*,q1,*,RESET<>q1,X,q1,X,RIGHT<>q1,0,qr,0,RESET<>q1,*,qa,*,RESET

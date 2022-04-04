@@ -1,0 +1,14 @@
+#Input Alphabet: {0,1}
+#Tape Alphabet: {0,1,*,X}
+
+#Configuration
+initialState=q0
+acceptState=qa
+rejectState=qr
+variant=CLASSICAL
+
+#Delta Function: Decides whether 0 is the first character of the input string
+#rules=q0,0,qa,0,RIGHT<>q0,1,qr,1,RIGHT<>q0,*,qr,*,RIGHT
+
+#Delta Function: Decides 0^n1^n
+rules=q0,*,qa,*,RIGHT<>q0,1,qr,1,RIGHT<>q0,0,q1,X,RIGHT<>q1,0,q1,0,RIGHT<>q1,1,q1,1,RIGHT<>q1,X,q2,X,LEFT<>q1,*,q2,*,LEFT<>q2,X,qr,X,LEFT<>q2,0,qr,0,LEFT<>q2,1,q3,X,LEFT<>q3,1,q3,1,LEFT<>q3,0,q3,0,LEFT<>q3,X,q4,X,RIGHT<>q4,0,q1,X,RIGHT<>q4,X,qa,X,RIGHT<>q4,1,qr,1,RIGHT<>q0,X,qr,X,RIGHT<>q2,*,qr,*,RIGHT<>q3,*,qr,*,RIGHT<>q4,*,qr,*,RIGHT
